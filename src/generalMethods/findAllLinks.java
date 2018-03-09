@@ -6,17 +6,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-public class A1 {
+public class findAllLinks {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\Chrome\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\ChromeDriver\\chromedriver.exe");
 		WebDriver d= new ChromeDriver();
 		d.get("http://www.facebook.com");
-		Select sel= new Select(d.findElement(By.id("day")));
-		int length=sel.getOptions().size();
-		System.out.println(length);
-		}
+		List<WebElement> list = d.findElements(By.tagName("a"));
+		int x= list.size();
+		System.out.println("Todal no of links on the page are"+" " + x);
+		d.quit();
+		
+
+
+	}
 
 }
+ 
